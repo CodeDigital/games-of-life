@@ -1,8 +1,8 @@
-# games-of-life
-Implementing [Conway's game of life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) in multiple different programming languages.
+# Games of Life
+Implementing [Conway's game of life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) in multiple programming languages.
 This is not as simple as finding the module in each language that does the trick for me. This will ultimately be a place to track how well I can program in whichever language implementations I have listed.
 
-**Does a completed challenge in a language mean I am an expert in the language?** Nah, you're dreaming, but it does imply that I have a working understanding of the syntax. Wisdom and practice in the language will come with further work experience, given the chance.
+**Does a completed challenge in a language mean I am an expert in the language?** Nah, you're dreaming, but it implies that I understand the syntax well. Wisdom and practice in the language will come with further work experience, given the chance.
 
 ## Implemented Languages
 _Currently none will be completed, but this can show what languages I want to learn and have learned so far._
