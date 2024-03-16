@@ -24,10 +24,11 @@ If these conditions are not satisfied, then I cannot check the language off in t
 - The game starts with a random state of cells.
 - The game will launch with a grid of size 256x144.
 - The game can be paused by pressing `SPACEBAR`.
-- The game can be cleared by pressing `R`.
+- The game can be cleared by pressing `c`.
+- A random state can be repopulated by pressing `r`.
 - Individual cells can be activated/deactivated by clicking on them.
 - The game runs correctly. See the [Conway's Game of Life Wikipedia Page for the rules](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
-- The framerate of the game can be adjusted with arrow keys.
+- The framerate of the game can be adjusted with arrow keys (`up`, `down`).
 - The code has proper commenting.
 - There is a README which explains how to run the code and provides a general description of the implementation/design.
 
