@@ -6,8 +6,7 @@ This is not as simple as finding the module in each language that does the trick
 
 ## Implemented Languages
 _Currently none will be completed, but this can show what languages I want to learn and have learned so far._
-- [ ] Javascript (canvas)
-- [ ] HTML + CSS + Javascript (using HTML tags)
+- [ ] HTML + CSS + Javascript
 - [ ] Python
 - [ ] Java
 - [ ] C
@@ -23,11 +22,12 @@ _Italics mean it's a language I want to learn._
 If these conditions are not satisfied, then I cannot check the language off in the above list.
 - Runs on Windows (I will not bother with multi-platform support).
 - The game starts with a random state of cells.
-- The game can be paused.
-- The game can be cleared.
+- The game will launch with a grid of size 256x144.
+- The game can be paused by pressing `SPACEBAR`.
+- The game can be cleared by pressing `R`.
 - Individual cells can be activated/deactivated by clicking on them.
 - The game runs correctly. See the [Conway's Game of Life Wikipedia Page for the rules](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
-- The framerate of the game can be adjusted.
+- The framerate of the game can be adjusted with arrow keys.
 - The code has proper commenting.
 - There is a README which explains how to run the code and provides a general description of the implementation/design.
 
