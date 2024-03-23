@@ -1,12 +1,21 @@
 let paused = false
 
-// create the game grid
+/**
+ * Set up the grid and update the FPS display
+ *
+ */
 window.onload = () => {
+    
     createGrid()
     updateFPS(0)
 }
-
+/**
+ * Keyboard management
+ *
+ * @param {event} event
+ */
 window.onkeydown = (event) => {
+    
     switch (event.key) {
         case 'c':
             clearGrid()
@@ -31,9 +40,13 @@ window.onkeydown = (event) => {
     }
 }
 
-// start game loop from https://www.sitepoint.com/quick-tip-game-loop-in-javascript/
+/**
+ * Game loop
+ * Reference: https://www.sitepoint.com/quick-tip-game-loop-in-javascript/
+ * 
+ * @param {*} timestamp
+ */
 function loop(timestamp) {
-
     if(!paused) {
         // update dt in seconds
         dt += (timestamp - lastRender) / 1000;
@@ -48,6 +61,8 @@ function loop(timestamp) {
     lastRender = timestamp
     window.requestAnimationFrame(loop)
 }
+
+// initiate the render timestamp and deltatime tracker (also start game loop)
 let lastRender = 0
 let dt = 0
 window.requestAnimationFrame(loop)
