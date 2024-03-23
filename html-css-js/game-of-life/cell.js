@@ -1,29 +1,57 @@
 const CLASS_CELL_INACTIVE = 'cell';
 const CLASS_CELL_ACTIVE = 'cell cell-active';
 
-// cell object
+/**
+ * Class function for Cell object.
+ *
+ * @param {int} x
+ * @param {int} y
+ * @param {boolean} isAlive
+ * @return {Cell} 
+ */
 function Cell(x, y, isAlive) {
-
+    
+    // Current and future states of cell
     this.alive = isAlive
     this.willBeAlive = false
+
+    // Position data
     this.x = x
     this.y = y
     this.index = cellIndex(this.x, this.y)
+
+    // DOM data
     this.element = document.createElement('div')
     this.element.className = 'cell' + (isAlive ? ' cell-active':'')
     this.element.id = this.index
+
+    /**
+     * When cell is clicked, switch its state
+     *
+     */
     this.element.onclick = () => {
-        this.setState(!this.alive)
+        this.setCurrentState(!this.alive)
         this.setFutureState(this.alive)
         console.log('clicked ' + this.index)
     }
 
+    /**
+     * Hard set the current and future states
+     *
+     * @param {boolean} isAlive
+     */
     this.resetState = (isAlive) => {
-        this.setState(isAlive)
+        this.setCurrentState(isAlive)
         this.setFutureState(isAlive)
     }
 
-    this.setState = (isAlive) => {
+    /**
+     * Set the current state
+     *
+     * @param {boolean} isAlive
+     */
+    this.setCurrentState = (isAlive) => {
+        
         if(isAlive) {
             this.alive = true
             this.element.className = CLASS_CELL_ACTIVE
@@ -33,11 +61,21 @@ function Cell(x, y, isAlive) {
         }
     }
 
+    /**
+     * Set the future state
+     *
+     * @param {boolean} willBeAlive
+     */
     this.setFutureState = (willBeAlive) => {
         this.willBeAlive = willBeAlive
     }
 
-    // update active status to new value
+    /**
+     * Update the future state based on neighbour counts
+     * (AKA apply Conway's rules)
+     *
+     * @param {*} activeNeighbours
+     */
     this.updateFutureState = (activeNeighbours) => {
         if(activeNeighbours == 3 || (activeNeighbours == 2 && this.alive)){
             this.willBeAlive = true
@@ -46,8 +84,15 @@ function Cell(x, y, isAlive) {
         this.willBeAlive = false
     }
 
+    /**
+     * Current state is set to future state.
+     * Future state is assumed to always be false
+     * (not that that makes a massive difference)
+     *
+     */
     this.iterateState = () => {
-        this.setState(this.willBeAlive)
+        
+        this.setCurrentState(this.willBeAlive)
         this.willBeAlive = false
     }
 
