@@ -1,0 +1,57 @@
+<html>
+    <head>
+
+        <style>
+            :root {
+                --cell-width: 256;
+                --cell-height: 144;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100vw;
+                background-color: black;
+            }
+
+            #cell-container {
+                margin-top: 45;
+                width:calc(100vw - 10px);
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+
+            #fps {
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                color: white;
+                font-size: 20px;
+                font-family: monospace;
+            }
+
+            .cell {
+                padding: 0;
+                margin: 0;
+                display: inline-block;
+                width: min(calc((100vw - 10px) / var(--cell-width)), calc((100vh - 50px) / var(--cell-height)));
+                height: min(calc((100vw - 10px) / var(--cell-width)), calc((100vh - 50px) / var(--cell-height)));
+            }
+
+            .cell-active {
+                background-color: lightskyblue;
+            }
+        </style>
+
+        <!-- Init scripts -->
+        <script src="./game-of-life/cell.js"></script>
+        <script src="./game-of-life/grid.js"></script>
+        <script src="./fps-helpers.js"></script>
+        <script src="./game.js"></script>
+
+    </head>
+    <body>
+        <div id="cell-container"></div>
+        <span id="fps">test</span>
+    </body>
+</html>
