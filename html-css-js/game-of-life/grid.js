@@ -8,10 +8,13 @@ const NEIGHBOUR_DELTAS = [
 ]
 let grid = []
 
-// create the grid and return it
-function createGrid() {
 
-    // get the body element
+/**
+ * Creates the initial cell grid in DOM.
+ *
+ */
+function createGrid() {
+    // Get the container
     const container = document.getElementById('cell-container');
 
     // create the cells, append to grid array, and add to cell container.
@@ -26,7 +29,11 @@ function createGrid() {
 
 }
 
-// update the grid 
+/**
+ * Performs a frame update of the grid.
+ * (AKA iterate the game of life)
+ *
+ */
 function updateGrid() {
     // count the active neighbours and update the future state
     grid.forEach((cell) => {
@@ -39,12 +46,21 @@ function updateGrid() {
     });
 }
 
+/**
+ * Set every cell in the grid to dead state.
+ * (clear the grid)
+ * 
+ */
 function clearGrid() {
     grid.forEach((cell) => {
         cell.resetState(false)
     })
 }
 
+/**
+ * Randomly populate the grid
+ * 
+ */
 function populateGrid() {
     grid.forEach((cell) => {
         let newState = Math.random() < PROB_CELL_INITIAL_ACTIVE
@@ -52,9 +68,17 @@ function populateGrid() {
     })
 }
 
+/**
+ * Count the number of active/alive neighbours for a given cell
+ * 
+ * @param {Cell[]} grid 
+ * @param {Cell} cell 
+ * @returns {int}
+ */
 function countActiveNeighbours(grid, cell){
     let numActive = 0
 
+    // iterate on the neighbour delta vectors
     NEIGHBOUR_DELTAS.forEach((neighbourDelta) => {
         let nx = cell.x + neighbourDelta[0]
         let ny = cell.y + neighbourDelta[1]
@@ -64,4 +88,15 @@ function countActiveNeighbours(grid, cell){
     })
 
     return numActive
+}
+
+/**
+ * Calculate the index of the cell in the grid array
+ *
+ * @param {int} x
+ * @param {int} y
+ * @return {int} 
+ */
+function cellIndex(x, y) {
+    return x + y * GRID_WIDTH
 }
