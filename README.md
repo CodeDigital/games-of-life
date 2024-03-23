@@ -6,7 +6,7 @@ This is not as simple as finding the module in each language that does the trick
 
 ## Implemented Languages
 _Currently none will be completed, but this can show what languages I want to learn and have learned so far._
-- [ ] HTML + CSS + Javascript
+- [x] HTML + CSS + Javascript
 - [ ] Python
 - [ ] Java
 - [ ] C
